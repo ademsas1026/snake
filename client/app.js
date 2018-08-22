@@ -1,18 +1,14 @@
-import React from 'react';
-import {Route, Switch} from 'react-router-dom';
-import {Users} from './components';
-import 'babel-polyfill';
+import React from 'react'
+import {Game} from './components'
+require('babel-polyfill') // enables async-await
 
 
 const App = () => (
   <div>
-    <p> oh hai i'm boilerplate. is it hot in here or is it just me? </p>
-    <Switch>
-      <Route path="/users" component={Users} />
-    </Switch>
+    <Game />
   </div>
 );
 
 
-export default App;
+export default App
 

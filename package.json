@@ -9,7 +9,6 @@
     "start": "node server",
     "start-dev": "webpack -w & nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
-
   },
   "repository": {
     "type": "git",
@@ -22,8 +21,8 @@
   },
   "homepage": "https://github.com/rockycodes/boilerplate#readme",
   "dependencies": {
+    "@material-ui/core": "^1.5.1",
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
