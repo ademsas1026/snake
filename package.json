@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate",
+  "name": "snake",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,18 +12,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rockycodes/boilerplate.git"
+    "url": "git+https://github.com/ademsas1026/snake"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rockycodes/boilerplate/issues"
   },
-  "homepage": "https://github.com/rockycodes/boilerplate#readme",
+  "homepage": "https://snake.com",
   "dependencies": {
     "@material-ui/core": "^1.5.1",
+    "@babel/polyfill": "^7.0.0-beta.40",
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
@@ -41,7 +41,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.40",
-    "@babel/polyfill": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
     "@babel/preset-stage-2": "^7.0.0-beta.40",

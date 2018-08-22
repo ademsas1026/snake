@@ -12,14 +12,14 @@ export default class Game extends Component {
       currDirection: 'R'
     }
     this.play = this.play.bind(this)
+    this.getNewHead = this.getNewHead.bind(this)
   }
 
-  componentDidMount(){
-    this.play()
-   
+  async componentDidMount(){
+    await this.play()
   }
   
-  play(){
+  async play(){
     let { position, board } = this.state, oldHead = position[0], newHead
     console.log('this is position: ', position, 'this is board: ', board)
     while(oldHead[0] < board[0].length &&
@@ -27,17 +27,17 @@ export default class Game extends Component {
         !position.slice(1).includes(oldHead)
       ) {
         oldHead = position[0]
-        this.setState(prevState => {
+        await this.setState(prevState => {
           prevState.position.pop() // removes tail from position list
           { position: prevState.position }
         })
-        newHead = this.getNewHead(oldHead)
+        newHead = this.getNewHead()
         position.unshift(newHead) // adds new head to position list
       }
       this.setState({ play: false })
   }
 
-  getNewHead(oldHead) {
+  getNewHead() {
     const { position } = this.state
     console.log('getting new head position')
     return position
