@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Board } from './index'
+import { Board, Pixi } from './index'
 
 
 export default class Game extends Component {
@@ -28,8 +28,8 @@ export default class Game extends Component {
       ) {
         oldHead = position[0]
         await this.setState(prevState => {
-          prevState.position.pop() // removes tail from position list
-          { position: prevState.position }
+          // prevState.position.pop() // removes tail from position list
+          return { position: prevState.position }
         })
         newHead = this.getNewHead()
         position.unshift(newHead) // adds new head to position list
@@ -38,20 +38,26 @@ export default class Game extends Component {
   }
 
   getNewHead() {
-    const { position } = this.state
+    const { position, currDirection } = this.state
+    let newHead
     console.log('getting new head position')
-    return position
-    // if (currDirection === 'L') newHead = [position[0][0] - 1, position[0][1]]
+    if (currDirection === 'L') newHead = [position[0][0] - 1, position[0][1]]
+    else if (currDirection === 'R') newHead = [position[0][0] + 1, position[0][1]]
+    else if (currDirection === 'U') newHead = [position[0][0], position[0][1] - 1]
+    else newHead = [position[0][0], position[0][1] + 1]
+    console.log("position: ", position)
+    return newHead
   }
 
 
   render(){
    
-    const { position } = this.state
+    const { position, board } = this.state
     console.log('this is position', position)
     return (
       <div>
         <Board />
+        <Pixi matrix={board}/>
       </div>
     )
   }
